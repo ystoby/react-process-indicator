@@ -41,17 +41,17 @@
   },
   "keywords": [
     "react",
-    "web",
-    "template"
+    "process",
+    "indicator"
   ],
   "author": "ys",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git@github.com:jkiss/Web-React-Boilerplate.git"
+    "url": "git@github.com:ystoby/react-process-indicator.git"
   },
   "bugs": {
-    "url": "https://github.com/jkiss/Web-React-Boilerplate/issues"
+    "url": "https://github.com/ystoby/react-process-indicator/issues"
   },
-  "homepage": "https://github.com/jkiss/Web-React-Boilerplate"
+  "homepage": "https://github.com/ystoby/react-process-indicator"
 }
