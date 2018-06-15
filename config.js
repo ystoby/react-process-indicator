@@ -1,5 +1,5 @@
 
-'use strict'; 
+// 'use strict'; 
 
 module.exports = {
     // Deploy
@@ -20,5 +20,5 @@ module.exports = {
         ,image: ''
         ,url: 'https://url/article/moments-on-world-stage.html'
         ,thumb: 'https://url/article/images/page2/thumb.jpg'
-    }
+    },
 }

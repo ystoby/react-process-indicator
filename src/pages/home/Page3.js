@@ -4,7 +4,7 @@
  * @Last Modified by: Nokey
  * @Last Modified time: 2017-08-23 21:19:44
  */
-'use strict';
+// 'use strict';
 
 import { TimelineLite } from 'gsap'
 

@@ -4,7 +4,7 @@
  * @Last Modified by: Nokey
  * @Last Modified time: 2017-10-12 16:06:49
  */
-'use strict';
+// 'use strict';
 
 import './loading.styl'
 import 'jquery.html5loader'

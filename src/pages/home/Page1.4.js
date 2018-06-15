@@ -4,7 +4,7 @@
  * @Last Modified by: Nokey
  * @Last Modified time: 2017-10-12 16:04:13
  */
-'use strict'; 
+// 'use strict'; 
 
 // Plugins
 import { TimelineLite } from 'gsap'
@@ -26,9 +26,9 @@ class Page1_4 extends React.Component {
         _me.TL = new TimelineLite()
 
         _me.TL
-            .to('.page1 .logo', 0.7, {opacity: 1})
-            .to('.page1 .title', 0.7, {opacity: 1})
-            .to('.page1 .sub-title', 0.7, {opacity: 1})
+            .to('.page1.4 .logo', 0.7, {opacity: 1})
+            .to('.page1.4 .title', 0.7, {opacity: 1})
+            .to('.page1.4 .sub-title', 0.7, {opacity: 1})
             .call(()=>{
                 $(window).trigger('scroll-fullpage', 
                     {type: 'SET-ALLOW-SCROLL', payload: {
@@ -52,7 +52,7 @@ class Page1_4 extends React.Component {
     }
     componentDidMount(){
         // console.log(this.props.dataSet)
-        if(this.props.dataSet.includes('_')){
+        if(this.props.dataSet.indexOf('_')>=0){
             let a = this.props.dataSet.split('_')[0];
             this.props.add(a)
         }else{

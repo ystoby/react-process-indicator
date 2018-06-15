@@ -4,13 +4,13 @@
  * @Last Modified by: Nokey
  * @Last Modified time: 2017-10-24 14:42:32
  */
-'use strict';
+// 'use strict';
 
 // Plugins
 import 'fullpage.js'
 
 // Utils
-import { TimelineLite } from 'gsap'
+import { TimelineLite} from 'gsap'
 import Util from 'utils'
 
 // Style
@@ -247,7 +247,7 @@ class MyComponent extends React.Component {
                     dir,
                     flag,
                     obj
-                }}/>>
+                }}/>
                 
                 
             </section>

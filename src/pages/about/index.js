@@ -4,7 +4,7 @@
  * @Last Modified by: Mr.B
  * @Last Modified time: 2018-03-16 15:17:35
  */
-'use strict'; 
+// 'use strict'; 
 
 import styles from './css'
 

@@ -4,7 +4,7 @@
  * @Last Modified by: Nokey
  * @Last Modified time: 2017-10-12 16:04:13
  */
-'use strict'; 
+// 'use strict'; 
 
 // Plugins
 import { TimelineLite } from 'gsap'
@@ -52,7 +52,7 @@ class Page1_1 extends React.Component {
     }
     componentDidMount(){
         // console.log(this.props.dataSet)
-        if(this.props.dataSet.includes('_')){
+        if(this.props.dataSet.indexOf('_')>=0){
             let a = this.props.dataSet.split('_')[0];
             this.props.add(a)
         }else{

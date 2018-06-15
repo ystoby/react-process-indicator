@@ -1,5 +1,5 @@
 
-'use strict';
+// 'use strict';
 
 const path = require('path'),
       vendor_path = path.resolve(__dirname, '../src/vendor');

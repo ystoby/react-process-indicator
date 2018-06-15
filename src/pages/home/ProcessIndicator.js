@@ -1,5 +1,7 @@
 // import styles from './picss.styl';
+
 require('./picss.styl')
+
 class ProcessIndicator extends React.Component{
     constructor(props){
         super(props);
@@ -24,37 +26,42 @@ class ProcessIndicator extends React.Component{
         // console.log(this.props.currentPage,total)
         // console.log("当前部分是"+hh+","+"一共有"+num+"部分")
         // console.log('flag是'+this.props.flag)
+        
         if(!this.props.flag){
             //没有分页
-            this.span1.style = 'color:#399539';
-            circle.setAttribute('stroke','#399539');
-            circle.setAttribute('stroke-dasharray', this.state.num1);
+            $('.piText-before').css('color','#399539')
+            $('#circle').css('stroke','#399539');
+            
+                // $('#circle').css('transition','0.8s');
+                // $('#circle').css('stroke-dasharray',this.state.num1);
+           
+                TweenLite.to('#circle',0.5,{css:{strokeDasharray:this.state.num1}});
+            
         }else{
             if(perimeter * percent<(Math.PI*2*40)){
-                this.i.style = this.span2.style = this.span1.style = 'color:white';//重新定义一下
-                circle.setAttribute('stroke','white');
+                $('.piText-before').css('color','white');
+                $('.piText-middle').css('color','white')
+                $('.piText-after').css('color','white')
+                //重新定义一下
+                $('#circle').css('stroke','white');
             }else{
-                this.span1.style = 'color:#399539';
-                circle.setAttribute('stroke','#399539');
+                $('.piText-before').css('color','#399539')
+                $('#circle').css('stroke','#399539');
                 if(hh==num){
-                    this.i.style = this.span2.style = 'color:#399539';
+                    $('.piText-middle').css('color','#399539')
+                    $('.piText-after').css('color','#399539')
                 }
             }
-            circle.setAttribute('stroke-dasharray', perimeter * percent + " " + perimeter * (1 - percent));
+            
+                // $('#circle').css('transition','0.8s');
+                // $('#circle').css('stroke-dasharray',perimeter * percent + " " + perimeter * (1 - percent));
+                TweenLite.to('#circle',0.5,{css:{strokeDasharray:perimeter * percent + " " + perimeter * (1 - percent)}});
+
+            
+            
         }
     }
-    //拉动条
-    // change(){
-    //     let range = this.refs.range, 
-    //         circle = this.refs.circle;
-    //         // console.log(range,circle)
-    //     let percent = 2 / 3, perimeter = Math.PI * 2 * 42;
-    //     circle.setAttribute('stroke-dasharray', perimeter * percent + " " + perimeter * (1 - percent));
-    //     console.log(range.value);
-    //     this.setState({
-    //         rangeValue : range.value
-    //     }) 
-    // }
+    
     render(){
         let {rangeValue,num1} = this.state;
         let {currentPart,dir} = this.props;
@@ -69,7 +76,7 @@ class ProcessIndicator extends React.Component{
                             <circle cx="50" cy="50" r="40" strokeWidth='6' stroke="#399539" fill="none"  ref='circle' id='circle' strokeDasharray={num1}></circle>
                         </svg>
                     </div>
-                    {/* <p><input id="range" type="range" min="0" max="100" value={rangeValue} style={{width:'100px'}} onChange={this.change.bind(this)} ref="range"/></p> */}
+                    
                     <div className="piText">
                         <div className="piText-box">
                             <span className="piText-before" ref={ref=>this.span1=ref}>{currentPart}</span>

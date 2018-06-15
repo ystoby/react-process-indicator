@@ -4,7 +4,7 @@
  * @Last Modified by: Nokey
  * @Last Modified time: 2017-08-23 21:19:44
  */
-'use strict';
+// 'use strict';
 
 import { TimelineLite } from 'gsap'
 
@@ -22,13 +22,13 @@ class Page3_3 extends React.Component {
         _me.TL = new TimelineLite()
 
         _me.TL
-            .to('.page2 .top-box', 0.7, {opacity: 1})
-            .to('.page2 .btn-1', 0.7, {opacity: 1})
-            .to('.page2 .btn-2', 0.7, {opacity: 1})
-            .to('.page2 .bottom-box', 0.3, {opacity: 1})
-            .to('.page2 .txt-3', 0.7, {opacity: 1})
-            .to('.page2 .chart', 0.7, {opacity: 1})
-            .to('.page2 .txt-4', 0.7, {opacity: 1})
+            .to('.page3.3 .top-box', 0.7, {opacity: 1})
+            .to('.page3.3 .btn-1', 0.7, {opacity: 1})
+            .to('.page3.3 .btn-2', 0.7, {opacity: 1})
+            .to('.page3.3 .bottom-box', 0.3, {opacity: 1})
+            .to('.page3.3 .txt-3', 0.7, {opacity: 1})
+            .to('.page3.3 .chart', 0.7, {opacity: 1})
+            .to('.page3.3 .txt-4', 0.7, {opacity: 1})
 
             .call(()=>{
                 $(window).trigger('scroll-fullpage', 
@@ -62,7 +62,7 @@ class Page3_3 extends React.Component {
             $(_me.txt2).css('opacity', '1')
         })
         // console.log(this.props.dataSet)
-        if(this.props.dataSet.includes('_')){
+        if(this.props.dataSet.indexOf('_')>=0){
             let a = this.props.dataSet.split('_')[0];
             this.props.add(a)
         }else{
@@ -76,7 +76,7 @@ class Page3_3 extends React.Component {
 
     render() {
         return (
-            <section className="page2 bg-cover component fullpage-slide preload-img" 
+            <section className="page3.3 bg-cover component fullpage-slide preload-img" 
                 data-id="page3_3">
 
                 <h1>Page3_3</h1>

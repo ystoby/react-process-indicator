@@ -1,5 +1,5 @@
 
-'use strict';
+// 'use strict';
 
 const config = require('../config')
 const path = require('path')
@@ -8,6 +8,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 const copyWebpackPlugin = require('copy-webpack-plugin')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+
 
 module.exports = {
     plugins: [
