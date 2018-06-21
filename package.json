@@ -2,6 +2,7 @@
       "name": "react-process-indicator",
       "version": "1.0.1",
       "description": "",
+      "main":"src/pages/home/index.js",
       "dependencies": {
         "fullpage.js": "^2.9.4",
         "gsap": "^1.20.3",
