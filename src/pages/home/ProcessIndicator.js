@@ -8,18 +8,22 @@ class ProcessIndicator extends React.Component{
         this.state={
             rangeValue: 1,
             num1:(Math.PI*2*40)+' '+Math.PI*2*40*(1-1/3),
+            count:null
         }
     }
     componentDidUpdate(){
         console.log(this.props)
         let hh = this.props.currentPart;//当前部分
         let total = this.props.obj[hh];//当前部分一共有多少页
-        let obj= this.props.obj;//把这几部分拿过来
-        let num = 0;
-        for(let attr in obj){
-            num++;
-        }
-        console.log(num);
+        // let obj= this.props.obj;//把这几部分拿过来
+        // let num = 0;
+        // for(let attr in obj){
+        //     num++;
+        // }
+        // console.log(obj);
+        // if(num!=null){
+        //     this.setState({count:num})
+        // }
         let range = this.refs.range, 
                 circle = this.refs.circle;
         let percent = (this.props.currentPage) / total, perimeter = Math.PI * 2 * 40;
@@ -47,7 +51,7 @@ class ProcessIndicator extends React.Component{
             }else{
                 $('.piText-before').css('color','#399539')
                 $('#circle').css('stroke','#399539');
-                if(hh==num){
+                if(hh==this.props.num){
                     $('.piText-middle').css('color','#399539')
                     $('.piText-after').css('color','#399539')
                 }
@@ -64,7 +68,7 @@ class ProcessIndicator extends React.Component{
     
     render(){
         let {rangeValue,num1} = this.state;
-        let {currentPart,dir} = this.props;
+        let {currentPart,dir,num} = this.props;
         // console.log(currentPart)
         return (
             <div className="proIndicator">
@@ -79,9 +83,9 @@ class ProcessIndicator extends React.Component{
                     
                     <div className="piText">
                         <div className="piText-box">
-                            <span className="piText-before" ref={ref=>this.span1=ref}>{currentPart}</span>
+                            <span className="piText-before" ref={ref=>this.span1=ref}>{currentPart?currentPart:1}</span>
                             <i className="piText-middle" ref={ref=>this.i=ref}>/</i>
-                            <span className="piText-after" ref={ref=>this.span2=ref}>3</span>
+                            <span className="piText-after" ref={ref=>this.span2=ref}>{num}</span>
                         </div>
                     </div>
                 </div>

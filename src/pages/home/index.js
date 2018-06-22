@@ -45,7 +45,8 @@ class MyComponent extends React.Component {
             flag:1,
             currentPage:1,
             arr:[],
-            obj:{}
+            obj:{},
+            num:null
 
         }
         
@@ -184,8 +185,14 @@ class MyComponent extends React.Component {
         this.setState({
             obj
         })
-        // console.log(obj);//{1: 2, 2: 1, 3: 3}
-
+        console.log(obj);//{1: 2, 2: 1, 3: 3}
+        for(let attr in obj){
+            this.state.num++;
+        }
+        this.setState({
+            num:this.state.num
+        })
+        // console.log(this.state.num)
     }
     add(n){
         this.state.arr.push(n);
@@ -214,9 +221,9 @@ class MyComponent extends React.Component {
         }
     }
     render() {
-        let {currentPart,dir,currentPage,flag,obj} = this.state;
+        let {currentPart,dir,currentPage,flag,obj,num} = this.state;
         // alert(1)
-        
+        // console.log(num)
         return (
             <section className={styles.home}>
                 {/* Full Page */}
@@ -246,7 +253,8 @@ class MyComponent extends React.Component {
                     currentPage,
                     dir,
                     flag,
-                    obj
+                    obj,
+                    num
                 }}/>
                 
                 
